@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang chủ - BusBookingWeb</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/custom.css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="header-gradient">
+    <div class="container-fluid px-3 px-lg-4 py-2">
+      <div class="row align-items-center">
+        <div class="col-4 col-md-2 d-flex align-items-center">
+          <button class="navbar-toggler border-0 p-2 text-white d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+          </button>
+        </div>
+        <div class="col-4 col-md-8 text-center">
+          <a href="#" class="navbar-brand text-white fw-bold fs-4 m-0">BusBooking</a>
+        </div>
+        <div class="col-4 col-md-2 text-end">
+          <a href="#" class="btn btn-outline-light btn-sm me-1">Đăng nhập</a>
+          <a href="#" class="btn btn-light btn-sm text-warning fw-semibold">Đăng ký</a>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-md py-2 pb-0">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
+          <ul class="navbar-nav gap-1 gap-lg-3 flex-wrap justify-content-center">
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Lịch trình</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Tra cứu vé</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Tin tức</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Hóa đơn</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Liên hệ</a></li>
+            <li class="nav-item"><a class="nav-link text-white py-2" href="#">Về chúng tôi</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow-1 py-3 py-md-4">
+    <div class="hero-banner mb-4">
+      <div class="hero-banner-inner rounded-4 shadow"></div>
+    </div>
+
+    <section class="search-section mb-5">
+      <div class="container">
+        <div class="search-box rounded-4 shadow p-3 p-md-4 bg-white">
+          <div class="row g-3 align-items-end">
+            <div class="col-12">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tripType" id="oneWay" value="oneway" checked>
+                <label class="form-check-label" for="oneWay">Một chiều</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tripType" id="roundTrip" value="roundtrip">
+                <label class="form-check-label" for="roundTrip">Khứ hồi</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="departure" class="form-label small fw-semibold">Điểm đi</label>
+              <input type="text" class="form-control" id="departure" placeholder="Chọn điểm đi">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <label for="arrival" class="form-label small fw-semibold">Điểm đến</label>
+              <input type="text" class="form-control" id="arrival" placeholder="Chọn điểm đến">
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <label for="departureDate" class="form-label small fw-semibold">Ngày đi</label>
+              <input type="date" class="form-control" id="departureDate">
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <label for="ticketCount" class="form-label small fw-semibold">Số vé</label>
+              <input type="number" class="form-control" id="ticketCount" value="1" min="1" max="10">
+            </div>
+            <div class="col-12 col-lg-2">
+              <button type="button" class="btn btn-search w-100 py-2 fw-semibold">Tìm chuyến xe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section mt-auto">
+    <div class="container py-4 py-lg-5">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="text-white fw-bold mb-3">BusBooking</h5>
+          <p class="text-white-50 small mb-0">Đặt vé xe khách trực tuyến - Nhanh chóng, tiện lợi, an toàn.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-semibold mb-3">Hỗ trợ</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Trung tâm trợ giúp</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Liên hệ</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-white fw-semibold mb-3">Về chúng tôi</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Giới thiệu</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Tin tức</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h6 class="text-white fw-semibold mb-3">Liên hệ</h6>
+          <p class="text-white-50 small mb-0">Hotline: 1900 xxxx</p>
+          <p class="text-white-50 small mb-0">Email: support@busbooking.vn</p>
+        </div>
+      </div>
+      <hr class="border-secondary my-4" />
+      <p class="text-center text-white-50 small mb-0">&copy; 2025 BusBooking. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

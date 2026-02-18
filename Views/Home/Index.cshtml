@@ -1,7 +1,47 @@
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Trang chủ";
 }
 
-<div>
-    <h1>Welcome to BusBookingWeb</h1>
+<div class="hero-banner mb-4">
+    <div class="hero-banner-inner rounded-4 shadow"></div>
 </div>
+
+<section class="search-section mb-5">
+    <div class="container">
+        <div class="search-box rounded-4 shadow p-3 p-md-4 bg-white">
+            <div class="row g-3 align-items-end">
+                <div class="col-12">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="oneWay" value="oneway" checked>
+                        <label class="form-check-label" for="oneWay">Một chiều</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="roundTrip" value="roundtrip">
+                        <label class="form-check-label" for="roundTrip">Khứ hồi</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="departure" class="form-label small fw-semibold">Điểm đi</label>
+                    <input type="text" class="form-control" id="departure" placeholder="Chọn điểm đi">
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <label for="arrival" class="form-label small fw-semibold">Điểm đến</label>
+                    <input type="text" class="form-control" id="arrival" placeholder="Chọn điểm đến">
+                </div>
+                <div class="col-12 col-md-6 col-lg-2">
+                    <label for="departureDate" class="form-label small fw-semibold">Ngày đi</label>
+                    <input type="date" class="form-control" id="departureDate">
+                </div>
+                <div class="col-12 col-md-6 col-lg-2">
+                    <label for="ticketCount" class="form-label small fw-semibold">Số vé</label>
+                    <input type="number" class="form-control" id="ticketCount" value="1" min="1" max="10">
+                </div>
+                <div class="col-12 col-lg-2">
+                    <button type="button" class="btn btn-search w-100 py-2 fw-semibold">
+                        Tìm chuyến xe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

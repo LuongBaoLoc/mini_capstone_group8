@@ -1,1 +1,54 @@
-/* Custom styles - ready for UI development */
+/* Header - Orange gradient */
+.header-gradient {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+}
+
+.header-gradient .nav-link:hover {
+    opacity: 0.9;
+}
+
+/* Hero banner */
+.hero-banner {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.hero-banner-inner {
+    width: 100%;
+    min-height: 200px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    box-shadow: 0 10px 40px rgba(234, 88, 12, 0.3);
+}
+
+@media (min-width: 768px) {
+    .hero-banner-inner {
+        min-height: 280px;
+    }
+}
+
+/* Search box */
+.search-section {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.search-box {
+    max-width: 100%;
+}
+
+.btn-search {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white !important;
+    border: none;
+}
+
+.btn-search:hover {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: white !important;
+}
+
+/* Footer */
+.footer-section {
+    background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+}
