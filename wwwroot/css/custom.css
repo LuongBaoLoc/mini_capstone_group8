@@ -48,6 +48,12 @@
     color: white !important;
 }
 
+/* Schedule page */
+.schedule-table-wrapper thead th {
+    color: #c2410c;
+    font-weight: 600;
+}
+
 /* Footer */
 .footer-section {
     background: linear-gradient(180deg, #1f2937 0%, #111827 100%);

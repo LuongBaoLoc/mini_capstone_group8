@@ -1,0 +1,66 @@
+@model List<BusSchedule>
+@{
+    ViewData["Title"] = "Lịch trình";
+}
+
+<div class="container">
+    <h1 class="mb-4 fw-bold text-dark">Lịch trình xe</h1>
+
+    <div class="filter-section rounded-4 shadow p-3 p-md-4 bg-white mb-4">
+        <form asp-controller="Schedule" asp-action="Index" method="get" class="row g-3 align-items-end">
+            <div class="col-12 col-md-5">
+                <label for="departure" class="form-label small fw-semibold">Điểm đi</label>
+                <input type="text" class="form-control" id="departure" name="departure" placeholder="VD: TP.Hồ Chí Minh" value="@ViewContext.HttpContext.Request.Query["departure"]">
+            </div>
+            <div class="col-12 col-md-5">
+                <label for="destination" class="form-label small fw-semibold">Điểm đến</label>
+                <input type="text" class="form-control" id="destination" name="destination" placeholder="VD: Đà Lạt" value="@ViewContext.HttpContext.Request.Query["destination"]">
+            </div>
+            <div class="col-12 col-md-2">
+                <button type="submit" class="btn btn-search w-100 py-2 fw-semibold">Lọc</button>
+            </div>
+        </form>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="schedule-table-wrapper rounded-4 shadow overflow-hidden bg-white">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="border-0 py-3">Tuyến xe</th>
+                            <th class="border-0 py-3 d-none d-md-table-cell">Loại xe</th>
+                            <th class="border-0 py-3 d-none d-lg-table-cell">Quãng đường</th>
+                            <th class="border-0 py-3 d-none d-lg-table-cell">Thời gian hành trình</th>
+                            <th class="border-0 py-3 text-end text-md-center">Giá vé</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var schedule in Model)
+                        {
+                            <tr>
+                                <td class="py-3">
+                                    <span class="fw-semibold">@schedule.RouteName</span>
+                                    <div class="small text-muted d-md-none mt-1">@schedule.BusType • @schedule.Distance • @schedule.Duration</div>
+                                </td>
+                                <td class="py-3 d-none d-md-table-cell">@schedule.BusType</td>
+                                <td class="py-3 d-none d-lg-table-cell">@schedule.Distance</td>
+                                <td class="py-3 d-none d-lg-table-cell">@schedule.Duration</td>
+                                <td class="py-3 text-end text-md-center">
+                                    <span class="text-danger fw-bold">@schedule.Price</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info rounded-4" role="alert">
+            Không tìm thấy tuyến xe phù hợp. Vui lòng thử lại với điểm đi/điểm đến khác.
+        </div>
+    }
+</div>
